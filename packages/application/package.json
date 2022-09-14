@@ -1,0 +1,34 @@
+{
+  "name": "application",
+  "version": "1.0.0-alpha.0",
+  "description": "",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "directory": "packages/application",
+    "type": "git",
+    "url": "https://github.com/aidant/boilerplate-monorepo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aidant/boilerplate-monorepo/issues"
+  },
+  "homepage": "https://github.com/aidant/boilerplate-monorepo/tree/main/packages/application#readme",
+  "keywords": [],
+  "main": "lib/application.js",
+  "scripts": {
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "concurrently --kill-others-on-fail npm:start:typescript npm:start:nodemon",
+    "start:nodemon": "nodemon --watch lib lib/entrypoint.js",
+    "start:typescript": "tsc --watch --preserveWatchOutput"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "lib/application.d.ts",
+  "dependencies": {},
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.6.2"
+  }
+}
