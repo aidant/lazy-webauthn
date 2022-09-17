@@ -1,0 +1,36 @@
+{
+  "name": "@lazy/webauthn-client",
+  "version": "1.0.0-alpha.0",
+  "description": "",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "directory": "packages/lazy-webauthn-client",
+    "type": "git",
+    "url": "https://github.com/aidant/lazy-webauthn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aidant/lazy-webauthn/issues"
+  },
+  "homepage": "https://github.com/aidant/lazy-webauthn/tree/main/packages/lazy-webauthn-client#readme",
+  "keywords": [],
+  "main": "lib/webauthn-client.js",
+  "scripts": {
+    "build": "tsc --build",
+    "prestart": "npm run build",
+    "start": "concurrently --kill-others-on-fail npm:start:typescript npm:start:nodemon",
+    "start:nodemon": "nodemon --watch lib lib/webauthn-client.js",
+    "start:typescript": "tsc --watch --preserveWatchOutput"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "lib/webauthn-client.d.ts",
+  "dependencies": {
+    "@lazy/webauthn-common": "*"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "typescript": "^4.6.2"
+  }
+}

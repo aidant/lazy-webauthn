@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "lib": ["ESNext", "WebWorker"],
     "outDir": "./lib",
     "rootDir": "./src"
   },
